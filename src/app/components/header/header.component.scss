@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1325px;
   margin: 0 auto;
+  padding-top: 16px;
 }
 .brand {
   display: grid;
@@ -13,9 +14,27 @@
     cursor: pointer;
   }
 }
+.logo-img {
+  z-index: -1;
+}
 .logo {
   width: 57px;
   height: 57px;
+  border-radius: 50%;
+  background-color: #467fbe;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: calc(57px/1.7) solid #15335c;
+  }
 }
 .name {
   color: #fff;
@@ -47,7 +66,7 @@
 }
 .help-text {
   display: flex;
-  font-family: 'Lucida';
-  font-size: 11px;
+  font-family: 'Lucida Grande';
+  font-size: 12px;
   margin-left: 6px;
 }

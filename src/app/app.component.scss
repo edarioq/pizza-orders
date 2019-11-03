@@ -2,7 +2,6 @@
 .container {
     position: relative;
     min-height: 100vh;
-    padding-top: 16px;
     &:after {
         content: '';
         position: absolute;
@@ -14,4 +13,11 @@
         background: linear-gradient(0deg, rgba(7,19,33,1) 0%, rgba(21,51,92,1) 100%);
         z-index: -1;
     }
+}
+.content {
+    display: grid;
+    grid-template-columns: 140px auto;
+    grid-column-gap: 40px;
+    max-width: 1325px;
+    margin: 0 auto;
 }

@@ -1,0 +1,11 @@
+<nav class="sidebar">
+    <ul class="sidebar-list">
+        <li
+            class="item"
+            *ngFor="let tab of sidebar"
+            [ngClass]="{ 'active' : tab.active }">
+            <img src="/assets/img/{{ tab.icon }}">
+            {{ tab.name }}
+        </li>
+    </ul>
+</nav>
