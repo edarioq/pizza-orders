@@ -1,0 +1,17 @@
+// Styles
+.container {
+    position: relative;
+    min-height: 100vh;
+    padding-top: 16px;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 653px;
+        width: 100%;
+        background: rgb(7,19,33);
+        background: linear-gradient(0deg, rgba(7,19,33,1) 0%, rgba(21,51,92,1) 100%);
+        z-index: -1;
+    }
+}

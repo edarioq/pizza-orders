@@ -1,0 +1,53 @@
+.top-header {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  width: 100%;
+  max-width: 1325px;
+  margin: 0 auto;
+}
+.brand {
+  display: grid;
+  grid-template-columns: 57px auto;
+  grid-column-gap: 13px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.logo {
+  width: 57px;
+  height: 57px;
+}
+.name {
+  color: #fff;
+}
+.main {
+  font-size: 30px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.sub {
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: lowercase;
+}
+.right-nav {
+  display: flex;
+  align-items: center;
+  justify-self: end;
+}
+.top-icon {
+  color: #fff;
+  margin-left: 28px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.help {
+  display: flex;
+}
+.help-text {
+  display: flex;
+  font-family: 'Lucida';
+  font-size: 11px;
+  margin-left: 6px;
+}

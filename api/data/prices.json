@@ -1,0 +1,17 @@
+{
+    "size": {
+        "sml": "20.00",
+        "med": "30.00",
+        "lg": "40.00"
+    },
+    "toppings": {
+        "bancon": "3.50",
+        "pepperoni": "2.50",
+        "mushroom": "2.00",
+        "olive": "4.50",
+        "basil": "3.00",
+        "sweetcorn": "2.00",
+        "onion": "3.00",
+        "tomatoe": "3.50"
+    }
+}
