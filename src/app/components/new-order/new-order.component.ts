@@ -46,7 +46,6 @@ export class NewOrderComponent implements OnInit {
     const pizzaToppings = this.pizza.toppings.map(p => Object.assign({}, p));
     pizzaSizes.map((s) => { s.selected = false; });
     pizzaToppings.map((t) => { t.selected = false; });
-
     const pizza = {
       sizes: pizzaSizes,
       toppings: pizzaToppings
@@ -67,11 +66,29 @@ export class NewOrderComponent implements OnInit {
       const selectedSize = pizza.sizes.filter(s => s.selected);
       const selectedToppings = pizza.toppings.filter(t => t.selected);
       selectedPizzas.push({
-        size: selectedSize,
+        sizes: selectedSize,
         toppings: selectedToppings
       });
     }
-    console.log(selectedPizzas);
     return selectedPizzas;
+  }
+
+  public paintDots(num: number): string {
+    return '.'.repeat(num);
+  }
+
+  public calculateTotal(): string {
+    let total = 0;
+    this.getOrderedPizzas().map((pizza) => {
+      if (pizza.sizes[0]) {
+        total += pizza.sizes[0].price;
+      }
+      if (pizza.toppings) {
+        pizza.toppings.map((topping) => {
+          total += topping.price;
+        });
+      }
+    });
+    return 'GBP ' + total.toFixed(2);
   }
 }

@@ -15,7 +15,7 @@
             </div>
             <div class="field">
                 <label class="user-label" for="">
-                    Email Address
+                    E-Mail Address
                 </label>
                 <input type="email">
             </div>
@@ -95,15 +95,61 @@
         </div>
         <div
             class="pizza-summary"
-            *ngFor="let pizza of getOrderedPizzas(); let i = index">
-            {{ pizza.size[0].name }} Pizza {{ i + 1 }}
-            <div class="toppings-chosen">
-                <ul>
-                    <li *ngFor="let topping of pizza.toppings">
-                        {{ topping.name }}
-                    </li>
-                </ul>
-            </div>
+            *ngIf="getOrderedPizzas()">
+            <ng-container *ngFor="let pizza of getOrderedPizzas(); let i = index">
+                <div class="size-chosen">
+                    <div
+                        class="sum-label left" *ngIf="pizza.sizes[0]">
+                        {{ pizza.sizes[0].name + ' Pizza ' + (i + 1) }} 
+                    </div>
+                    <div
+                        class="sum-label left" *ngIf="!pizza.sizes[0] && pizza.toppings.length">
+                        Please Choose a Size *
+                    </div>
+                    <div class="toppings-chosen">
+                        <ul>
+                            <li
+                                class="pizza-item"
+                                *ngFor="let topping of pizza.toppings">
+                                {{ topping.name }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="dots"
+                    [ngClass]="{ 'invisible' : !pizza.sizes[0] }">
+                    {{ paintDots(150) }}
+                </div>
+                <div
+                    class="price">
+                    <div
+                        class="sum-label right"
+                        *ngIf="pizza.sizes[0]">
+                        {{ 'GBP ' + pizza.sizes[0].price.toFixed(2) }}
+                    </div>
+                    <div class="toppings-chosen">
+                        <ul>
+                            <li
+                                class="pizza-item right"
+                                *ngFor="let topping of pizza.toppings">
+                                {{ topping.price.toFixed(2) }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-container>
         </div>
+    </section>
+
+    <section class="total">
+        <div class="label">Total</div>
+        <div class="total-price">{{ calculateTotal() }}</div>
+    </section>
+
+    <section class="place-order">
+        <button class="btn order-btn">
+            Place Order
+        </button>
     </section>
 </main>
