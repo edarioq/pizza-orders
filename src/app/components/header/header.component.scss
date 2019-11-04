@@ -1,6 +1,6 @@
 .top-header {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: auto 1fr;
   width: 100%;
   max-width: 1325px;
   margin: 0 auto;
@@ -10,6 +10,7 @@
   display: grid;
   grid-template-columns: 57px auto;
   grid-column-gap: 13px;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }

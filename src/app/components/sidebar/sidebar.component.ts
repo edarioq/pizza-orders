@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  private sidebar: any;
+  public sidebar: Array<Object>;
 
   constructor() { }
 
@@ -16,17 +16,17 @@ export class SidebarComponent implements OnInit {
       {
         name: 'Dashboard',
         icon: 'dashboard.svg',
-        active: false
+        url: 'dashboard',
       },
       {
         name: 'New Order',
         icon: 'new-order.svg',
-        active: true
+        url: 'new-order',
       },
       {
         name: 'Status',
         icon: 'order-status.svg',
-        active: false
+        url: 'order-status',
       }
     ]
   }

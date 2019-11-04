@@ -1,17 +1,62 @@
 {
-    "size": {
-        "sml": "20.00",
-        "med": "30.00",
-        "lg": "40.00"
-    },
-    "toppings": {
-        "bancon": "3.50",
-        "pepperoni": "2.50",
-        "mushroom": "2.00",
-        "olive": "4.50",
-        "basil": "3.00",
-        "sweetcorn": "2.00",
-        "onion": "3.00",
-        "tomatoe": "3.50"
-    }
+    "sizes": [
+        {
+            "name": "Large",
+            "price": "40.00",
+            "id": 1
+        },
+        {
+            "name": "Medium",
+            "price": "30.00",
+            "id": 2
+        },
+        {
+            "name": "Small",
+            "price": "20.00",
+            "id": 3
+        }
+
+    ],
+    "toppings": [
+        {
+            "name": "Bacon",
+            "price": 3.50,
+            "id": 1
+        },
+        {
+            "name": "Pepperoni",
+            "price": 2.50,
+            "id": 2
+        },
+        {
+            "name": "Mushroom",
+            "price": 2.00,
+            "id": 3
+        },
+        {
+            "name": "Olive",
+            "price": 4.50,
+            "id": 4
+        },
+        {
+            "name": "Basil",
+            "price": 3.00,
+            "id": 5
+        },
+        {
+            "name": "Sweetcorn",
+            "price": 2.50,
+            "id": 6
+        },
+        {
+            "name": "Onion",
+            "price": 3.00,
+            "id": 7
+        },
+        {
+            "name": "Tomatoe",
+            "price": 3.50,
+            "id": 8
+        }
+    ]
 }

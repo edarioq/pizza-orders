@@ -9,12 +9,18 @@ import { OrderService } from './services/order.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NewOrderComponent } from './components/new-order/new-order.component';
+import { OrderStatusComponent } from './components/order-status/order-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent,
+    NewOrderComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,
