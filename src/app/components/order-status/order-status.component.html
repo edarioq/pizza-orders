@@ -1,1 +1,117 @@
-<p>order-status works!</p>
+ <main class="content">
+    <section class="content-label">
+        <div class="main-label">
+            Order Management
+        </div>
+        <div class="sub-label">
+            Manage your orders here and get an overview of status
+        </div>
+    </section>
+    
+    <section class="main-content">
+        <div class="table-summary">
+            <div class="header">
+                <div class="label">
+                    Total items in inventory
+                </div>
+                <button class="btn print">
+                    Print Summary
+                </button>
+            </div>
+            <div class="items-count">
+                <div class="count-total">
+                    <span class="number">1,508</span> items
+                </div>
+                <div class="count-bar">
+                    <span class="bar green"></span>
+                    <span class="bar blue"></span>
+                    <span class="bar red"></span>
+                </div>
+            </div>
+        </div>
+        <div class="count-details">
+            <div class="block">
+                <span class="dot green"></span>
+                <span class="label">Completed</span>
+                <span class="num">326</span>
+            </div>
+            <div class="block">
+                <span class="dot blue"></span>
+                <span class="label">Pending</span>
+                <span class="num">581</span>
+            </div>
+            <div class="block">
+                <span class="dot red"></span>
+                <span class="label">Cancelled</span>
+                <span class="num">129</span>
+            </div>
+        </div>
+
+        <section class="table">
+            <div class="table-header table-grid">
+                <div class="table-col">Item ID</div>
+                <div class="table-col">Address</div>
+                <div class="table-col">Ordered Time</div>
+                <div class="table-col">Status / Action</div>
+                <div class="table-col"></div>
+            </div>
+            <div class="table-body table-grid">
+                <div class="table-col">AB75231</div>
+                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
+                <div class="table-col">5 minutes ago</div>
+                <div class="table-col">
+                    <span class="accept">Accept</span>
+                    <span class="cancel">Cancel</span>
+                    <span class="accepted" *ngIf="false">Accepted</span>
+                    <span class="in-transit" *ngIf="false">In-Transit</span>
+                    <span class="completed" *ngIf="false">Completed</span>
+                    <span class="canceled" *ngIf="false">Cancelled</span>
+                </div>
+                <div class="table-col">Mark as Completed</div>
+            </div>
+            <div class="table-body table-grid even">
+                <div class="table-col">AB75231</div>
+                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
+                <div class="table-col">5 minutes ago</div>
+                <div class="table-col">
+                    <span class="accept" *ngIf="false">Accept</span>
+                    <span class="cancel" *ngIf="false">Cancel</span>
+                    <span *ngIf="false">Accepted</span>
+                    <span *ngIf="false">In-Transit</span>
+                    <span *ngIf="false">Completed</span>
+                    <span class="canceled">Cancelled</span>
+                </div>
+                <div class="table-col">Mark as Completed</div>
+            </div>
+            <div class="table-body table-grid">
+                <div class="table-col">AB75231</div>
+                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
+                <div class="table-col">5 minutes ago</div>
+                <div class="table-col">
+                    <span class="accept" *ngIf="false">Accept</span>
+                    <span class="cancel" *ngIf="false">Cancel</span>
+                    <span *ngIf="false">Accepted</span>
+                    <span *ngIf="false">In-Transit</span>
+                    <span>Completed</span>
+                    <span *ngIf="false"class="canceled">Cancelled</span>
+                </div>
+                <div class="table-col mark">Mark as Completed</div>
+            </div>
+            <div class="table-body table-grid even">
+                <div class="table-col">AB75231</div>
+                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
+                <div class="table-col">5 minutes ago</div>
+                <div class="table-col">
+                    <span class="accept" *ngIf="false">Accept</span>
+                    <span class="cancel" *ngIf="false">Cancel</span>
+                    <span>Accepted</span>
+                    <span *ngIf="false">In-Transit</span>
+                    <span *ngIf="false">Completed</span>
+                    <span *ngIf="false" class="canceled">Cancelled</span>
+                </div>
+                <div class="table-col">Mark as Completed</div>
+            </div>
+        </section>
+
+    </section>
+ </main>

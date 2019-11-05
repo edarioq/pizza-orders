@@ -1,4 +1,3 @@
-/* @import '_variables'; */
 @import '../../../sass/variables';
 @import '../../../sass/typography';
 
@@ -12,6 +11,8 @@
     padding: 40px 55px;
     margin-top: 35px;
     margin-bottom: 100px;
+    max-width: 1032px;
+    box-sizing: border-box;
 }
 .heading {
     margin-bottom: 45px;
