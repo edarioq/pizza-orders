@@ -17,7 +17,6 @@ export class OrderStatusComponent implements OnInit {
     this.orderStatusService.getOrders().subscribe(
       res => {
         this.orders = res.orders;
-        console.log(this.orders);
       },
       err => {
         console.log(err);
