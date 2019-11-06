@@ -7,7 +7,7 @@
             Manage your orders here and get an overview of status
         </div>
     </section>
-    
+
     <section class="main-content">
         <div class="table-summary">
             <div class="header">
@@ -55,63 +55,53 @@
                 <div class="table-col">Status / Action</div>
                 <div class="table-col"></div>
             </div>
-            <div class="table-body table-grid">
-                <div class="table-col">AB75231</div>
-                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
-                <div class="table-col">5 minutes ago</div>
+            <div
+                class="table-body table-grid"
+                *ngFor="let order of orders">
+                <div class="table-col">{{ order.id }}</div>
+                <div class="table-col">{{ order.address }}</div>
+                <div class="table-col">{{ order.time }}</div>
                 <div class="table-col">
-                    <span class="accept">Accept</span>
-                    <span class="cancel">Cancel</span>
-                    <span class="accepted" *ngIf="false">Accepted</span>
-                    <span class="in-transit" *ngIf="false">In-Transit</span>
-                    <span class="completed" *ngIf="false">Completed</span>
-                    <span class="canceled" *ngIf="false">Cancelled</span>
+                    <span class="accept"
+                        *ngIf="isNewOrder(order)"
+                        (click)="accept(order)">
+                        Accept
+                    </span>
+                    <span
+                        class="cancel"
+                        *ngIf="isNewOrder(order)"
+                        (click)="cancel(order)">
+                        Cancel
+                    </span>
+                    <span
+                        class="accepted"
+                        *ngIf="order.accepted && !order.completed">
+                        Accepted
+                    </span>
+                    <span
+                        class="in-transit"
+                        *ngIf="order.transit && !order.completed">
+                        In-Transit
+                    </span>
+                    <span
+                        class="completed"
+                        *ngIf="order.completed">
+                        Completed
+                    </span>
+                    <span
+                        class="canceled"
+                        *ngIf="order.canceled">
+                        Cancelled
+                    </span>
                 </div>
-                <div class="table-col">Mark as Completed</div>
-            </div>
-            <div class="table-body table-grid even">
-                <div class="table-col">AB75231</div>
-                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
-                <div class="table-col">5 minutes ago</div>
-                <div class="table-col">
-                    <span class="accept" *ngIf="false">Accept</span>
-                    <span class="cancel" *ngIf="false">Cancel</span>
-                    <span *ngIf="false">Accepted</span>
-                    <span *ngIf="false">In-Transit</span>
-                    <span *ngIf="false">Completed</span>
-                    <span class="canceled">Cancelled</span>
+                <div
+                    class="table-col mark-completed"
+                    *ngIf="(order.accepted || order.transit) && !order.completed"
+                    (click)="markCompleted(order)">
+                    Mark as Completed
                 </div>
-                <div class="table-col">Mark as Completed</div>
-            </div>
-            <div class="table-body table-grid">
-                <div class="table-col">AB75231</div>
-                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
-                <div class="table-col">5 minutes ago</div>
-                <div class="table-col">
-                    <span class="accept" *ngIf="false">Accept</span>
-                    <span class="cancel" *ngIf="false">Cancel</span>
-                    <span *ngIf="false">Accepted</span>
-                    <span *ngIf="false">In-Transit</span>
-                    <span>Completed</span>
-                    <span *ngIf="false"class="canceled">Cancelled</span>
-                </div>
-                <div class="table-col mark">Mark as Completed</div>
-            </div>
-            <div class="table-body table-grid even">
-                <div class="table-col">AB75231</div>
-                <div class="table-col">4107 Clearview Drive, BURKET, Indiana</div>
-                <div class="table-col">5 minutes ago</div>
-                <div class="table-col">
-                    <span class="accept" *ngIf="false">Accept</span>
-                    <span class="cancel" *ngIf="false">Cancel</span>
-                    <span>Accepted</span>
-                    <span *ngIf="false">In-Transit</span>
-                    <span *ngIf="false">Completed</span>
-                    <span *ngIf="false" class="canceled">Cancelled</span>
-                </div>
-                <div class="table-col">Mark as Completed</div>
             </div>
         </section>
 
     </section>
- </main>
+</main>

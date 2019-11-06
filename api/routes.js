@@ -1,10 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const data = require('./data/prices.json')
+const prices = require('./data/prices.json')
+const orders = require('./data/orders.json')
 
-// Get data
 router.get('/prices', async (req, res) => {
-    res.send(data);
+    res.send(prices);
+});
+
+router.get('/orders', async (req, res) => {
+    res.send(orders);
 });
 
 module.exports = router;

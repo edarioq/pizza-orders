@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from '../../services/order.service';
+import { OrderService } from '../../services/orders/order.service';
 import { Size } from '../../models/size';
 import { Topping } from '../../models/topping';
 import { Pizza } from '../../models/pizza';
@@ -19,7 +19,7 @@ export class NewOrderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.orderService.getData().subscribe(
+    this.orderService.getPrices().subscribe(
       res => {
         this.pizza = res;
         this.pizzas.push(res);

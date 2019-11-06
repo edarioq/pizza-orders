@@ -200,15 +200,21 @@
         text-decoration: underline;
         color: $man-green;
         margin-right: 15px;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .cancel {
         text-decoration: underline;
         color: $man-red;
+        &:hover {
+            cursor: pointer;
+        }
     }
     .canceled {
         color: $man-red;
     }
-    &.mark {
+    &.mark-completed {
         color: $man-blue;
         text-decoration: underline;
         &:hover {
