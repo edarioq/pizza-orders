@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewOrderComponent } from './new-order.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('NewOrderComponent', () => {
   let component: NewOrderComponent;
@@ -8,7 +10,8 @@ describe('NewOrderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewOrderComponent ]
+      declarations: [ NewOrderComponent ],
+      imports: [ FormsModule, ReactiveFormsModule, HttpClientModule ]
     })
     .compileComponents();
   }));
