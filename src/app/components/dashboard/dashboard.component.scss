@@ -63,11 +63,13 @@
         justify-content: center;
     }
     .chart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 144px;
         height: 144px;
         margin: 0 auto 22px;
         background-color: transparent;
-        border: 2px solid gray;
         border-radius: 50%;
         box-sizing: border-box;
     }
@@ -84,6 +86,7 @@
     .chart-label {
         font-family: $main-font;
         font-size: 12px;
+        font-weight: 500;
         color: #6D6767;
     }
 }
@@ -102,14 +105,14 @@
     .currency {
         font-family: $main-font;
         font-size: 13px;
-        font-weight: 300;
+        font-weight: 400;
         margin-bottom: 5px;
         text-transform: uppercase;
     }
     .total {
         font-family: $main-font;
         font-size: 50px;
-        font-weight: 700;
+        font-weight: 600;
     }
 }
 .order-history {
@@ -131,9 +134,10 @@
         font-size: 12px;
         font-weight: 500;
         text-transform: uppercase;
+        margin-bottom: 13px;
     }
     .chart {
-
+        
     }
 }
 .report {
@@ -149,7 +153,19 @@
     .deliveries {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 0 40px 40px;
         margin-bottom: 40px;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 1px;
+            background-color: #E9E9E9;
+        }
     }
     .on-time {
         display: flex;
@@ -203,12 +219,14 @@
         }
     }
     .performance {
+        padding-left: 40px;
         .label {
             font-family: $main-font;
             font-weight: 300;
+            margin-bottom: 2px;
         }
     }
     .performance-percent {
-
+        color: #24CCB8;
     }
 }

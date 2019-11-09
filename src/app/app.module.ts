@@ -13,6 +13,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NewOrderComponent } from './components/new-order/new-order.component';
 import { OrderStatusComponent } from './components/order-status/order-status.component';
 
+import { ChartsModule } from 'ng2-charts';
+import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
+import { LineChartComponent } from './components/line-chart/line-chart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +24,15 @@ import { OrderStatusComponent } from './components/order-status/order-status.com
     SidebarComponent,
     DashboardComponent,
     NewOrderComponent,
-    OrderStatusComponent
+    OrderStatusComponent,
+    DoughnutChartComponent,
+    LineChartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     OrderService
