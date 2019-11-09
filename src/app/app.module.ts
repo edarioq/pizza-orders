@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { OrderService } from './services/orders/order.service';
+import { OrderStatusService } from './services/order-status/order-status.service';
+import { DashboardService } from './services/dashboard/dashboard.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
@@ -39,7 +41,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [
-    OrderService
+    OrderService,
+    OrderStatusService,
+    DashboardService
   ],
   bootstrap: [AppComponent]
 })
