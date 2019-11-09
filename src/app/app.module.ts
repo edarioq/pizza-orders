@@ -17,6 +17,8 @@ import { ChartsModule } from 'ng2-charts';
 import { DoughnutChartComponent } from './components/doughnut-chart/doughnut-chart.component';
 import { LineChartComponent } from './components/line-chart/line-chart.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,9 @@ import { LineChartComponent } from './components/line-chart/line-chart.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     OrderService

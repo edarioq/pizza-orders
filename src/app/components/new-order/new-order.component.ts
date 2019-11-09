@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../services/orders/order.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { Size } from '../../models/size';
 import { Topping } from '../../models/topping';
 import { Pizza } from '../../models/pizza';
@@ -14,11 +16,25 @@ export class NewOrderComponent implements OnInit {
   pizzas: Array<Pizza> = [];
   orderedPizzas: Array<Pizza> = [];
 
+  public userForm: FormGroup;
+
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit() {
+   this.getPizzas();
+
+   this.userForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    address: ['', Validators.required],
+    phone: ['', Validators.required]
+  });
+  }
+
+  public getPizzas(): void {
     this.orderService.getPrices().subscribe(
       res => {
         this.pizza = res;
@@ -50,7 +66,6 @@ export class NewOrderComponent implements OnInit {
       sizes: pizzaSizes,
       toppings: pizzaToppings
     };
-
     this.pizzas.push(pizza);
   }
 
@@ -90,5 +105,32 @@ export class NewOrderComponent implements OnInit {
       }
     });
     return 'GBP ' + total.toFixed(2);
+  }
+
+  public isOrderEmpty(): boolean {
+    let empty = false;
+    this.getOrderedPizzas().map((pizza) => {
+      if (!pizza.sizes.length && !pizza.toppings.length) {
+        empty = true;
+      } else {
+        empty = false;
+      }
+    });
+    return empty;
+  }
+
+  public placeOrder(): void {
+    if (!this.isOrderEmpty()) {
+      this.pizzas.splice(1, this.pizzas.length - 1);
+      this.pizzas[0].sizes.map((size) => {
+        size.selected = false;
+      });
+      this.pizzas[0].toppings.map((topping) => {
+        topping.selected = false;
+      });
+      this.userForm.reset();
+      this.isOrderEmpty();
+      console.log('Orded Saved!');
+    }
   }
 }

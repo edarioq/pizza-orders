@@ -292,4 +292,12 @@ input[type="phone"] {
     color: $blue;
     width: 101px;
     height: 31px;
+    &.disabled {
+        border: 1px solid gray;
+        color: gray;
+        opacity: 0.5;
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
 }
