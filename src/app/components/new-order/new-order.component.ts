@@ -130,6 +130,7 @@ export class NewOrderComponent implements OnInit {
       });
       this.userForm.reset();
       this.isOrderEmpty();
+      alert('Order Saved!');
       console.log('Orded Saved!');
     }
   }
