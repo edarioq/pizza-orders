@@ -40,4 +40,8 @@ export class OrderStatusComponent implements OnInit {
   public markCompleted(order: Order): void {
     order.completed = true;
   }
+
+  public printSummary(): void {
+    window.print();
+  }
 }

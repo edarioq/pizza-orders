@@ -1,4 +1,7 @@
 // Styles
+@function convertPxToMms($val) {
+    @return $val * 0.2645833333mm;
+}
 .container {
     position: relative;
     min-height: 100vh;
@@ -23,4 +26,25 @@
 }
 .main {
     display: none;
+}
+@media print {
+    * {
+        color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+    @page {
+        size: letter portrait;
+        margin: convertPxToMms(55) convertPxToMms(30) convertPxToMms(71);
+        counter-increment: page;
+        @bottom-left-corner {
+            color: #000 !important;
+        }
+    }
+    .app-sidebar {
+        display: none;
+    }
+    .content {
+        grid-template-columns: auto;
+        padding: 0 25px;
+    }
 }
