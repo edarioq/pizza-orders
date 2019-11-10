@@ -147,9 +147,6 @@
         background-color: $man-red;
     }
 }
-.table {
-
-}
 .table-grid {
     display: grid;
     grid-template-columns: 15% auto 20% 15% 15%;
@@ -161,6 +158,7 @@
 .table-header {
     font-family: $btn-font;
     font-size: 11px;
+    background-color: rgba(#DAE0D9, 0.2);
     color: #979EA6;
     position: relative;
     &:after {
@@ -188,14 +186,15 @@
     font-family: $btn-font;
     font-size: 13px;
     color: #515E6B;
+    &.odd {
+        background-color: rgba(#979EA6, 0.1);
+    }
 }
 .table-col {
     display: flex;
     align-items: center;
     height: 35px;
-    .status {
-
-    }
+    padding-left: 20px;
     &.item-id {
         text-transform: uppercase;
     }

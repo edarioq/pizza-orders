@@ -8,7 +8,9 @@
         </div>
     </section>
 
-    <section class="main-content">
+    <section
+        class="main-content"
+        *ngIf="orders">
         <div class="table-summary">
             <div class="header">
                 <div class="label">
@@ -59,7 +61,8 @@
             </div>
             <div
                 class="table-body table-grid"
-                *ngFor="let order of orders; let i = index">
+                [ngClass]="{ 'odd' : odd }"
+                *ngFor="let order of orders; let i = index; let odd = odd">
                 <div class="table-col item-id">{{ order.id }}</div>
                 <div class="table-col">{{ order.address }}</div>
                 <div class="table-col">
