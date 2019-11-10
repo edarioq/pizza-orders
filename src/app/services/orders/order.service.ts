@@ -20,7 +20,6 @@ export class OrderService {
 
   public saveOrder(order: Order): Observable<any> {
     const url = this.API + '/api/orders/add';
-    console.log(order);
     return this.httpClient.post(url, order);
   }
 

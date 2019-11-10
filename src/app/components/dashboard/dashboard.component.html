@@ -1,6 +1,6 @@
 <main
     class="dashboard"
-    *ngIf="dashboard">
+    *ngIf="dashboard && orderStatus">
     <div class="top-section">
         <section class="delivery-status">
             <div class="title">Delivery Status</div>
@@ -32,7 +32,7 @@
         <section class="total-sales">
             <div class="title">Total Sales</div>
             <div class="currency">{{ dashboard.sales.currency }}</div>
-            <div class="total">{{ dashboard.sales.total }}</div>
+            <div class="total">{{ dashboard.sales.total.toLocaleString() }}</div>
         </section>
     </div>
     

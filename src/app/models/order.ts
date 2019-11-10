@@ -7,4 +7,5 @@ export interface Order {
     completed: boolean;
     canceled: boolean;
     _duration?: any;
+    total: number;
 }

@@ -22,7 +22,7 @@
             </div>
             <div class="items-count">
                 <div class="count-total">
-                    <span class="number">1,508</span> items
+                    <span class="number">{{ getTotalInventory().toLocaleString() }}</span> items
                 </div>
                 <div class="count-bar">
                     <span class="bar green"></span>
@@ -35,17 +35,17 @@
             <div class="block">
                 <span class="dot green"></span>
                 <span class="label">Completed</span>
-                <span class="num">326</span>
+                <span class="num">{{ inventory.completed }}</span>
             </div>
             <div class="block">
                 <span class="dot blue"></span>
                 <span class="label">Pending</span>
-                <span class="num">581</span>
+                <span class="num">{{ inventory.pending }}</span>
             </div>
             <div class="block">
                 <span class="dot red"></span>
                 <span class="label">Cancelled</span>
-                <span class="num">129</span>
+                <span class="num">{{ inventory.cancelled }}</span>
             </div>
         </div>
 
@@ -60,7 +60,7 @@
             <div
                 class="table-body table-grid"
                 *ngFor="let order of orders; let i = index">
-                <div class="table-col item-id">{{ order.id }} {{ i }}</div>
+                <div class="table-col item-id">{{ order.id }}</div>
                 <div class="table-col">{{ order.address }}</div>
                 <div class="table-col">
                     {{

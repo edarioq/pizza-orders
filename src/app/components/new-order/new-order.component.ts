@@ -95,7 +95,7 @@ export class NewOrderComponent implements OnInit {
     return '.'.repeat(num);
   }
 
-  public calculateTotal(): string {
+  public addTotal(): number {
     let total = 0;
     this.getOrderedPizzas().map((pizza) => {
       if (pizza.sizes[0]) {
@@ -107,6 +107,10 @@ export class NewOrderComponent implements OnInit {
         });
       }
     });
+    return total;
+  }
+  public calculateTotal(): string {
+    const total = this.addTotal();
     return 'GBP ' + total.toFixed(2);
   }
 
@@ -124,7 +128,7 @@ export class NewOrderComponent implements OnInit {
 
   public placeOrder(): void {
     const randomId = Math.random().toString(36).slice(2, 9).toUpperCase();
-
+    console.log(this.getOrderedPizzas());
     if (!this.isOrderEmpty()) {
       const order: Order = {
         id: randomId,
@@ -134,9 +138,8 @@ export class NewOrderComponent implements OnInit {
         transit: false,
         completed: false,
         canceled: false,
+        total: this.addTotal()
       };
-
-      console.log(order);
 
       this.orderService.saveOrder(order).subscribe(
         res => {
@@ -156,7 +159,6 @@ export class NewOrderComponent implements OnInit {
       this.userForm.reset();
       this.isOrderEmpty();
       alert('Order Saved!');
-      console.log('Orded Saved!');
     }
   }
 }
