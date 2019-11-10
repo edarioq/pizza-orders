@@ -27,7 +27,6 @@ export class DashboardComponent implements OnInit {
     this.orderStatusService.getOrders().subscribe(
       res => {
         this.orderStatus = res.orders;
-        console.log(this.orderStatus);
         this.updateDashboardStatus();
         this.updateDashboardSales();
       }
@@ -51,7 +50,6 @@ export class DashboardComponent implements OnInit {
         newSales += order.total;
       }
     });
-    console.log(newSales);
     this.dashboard.sales.total = this.dashboard.sales.total + newSales;
   }
 }

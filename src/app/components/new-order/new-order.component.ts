@@ -117,18 +117,17 @@ export class NewOrderComponent implements OnInit {
   public isOrderEmpty(): boolean {
     let empty = false;
     this.getOrderedPizzas().map((pizza) => {
-      if (!pizza.sizes.length && !pizza.toppings.length) {
-        empty = true;
-      } else {
-        empty = false;
-      }
+      empty = !pizza.sizes.length && !pizza.toppings.length ? true : false;
     });
-    return empty;
+    if (empty || this.userForm.status === 'INVALID') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   public placeOrder(): void {
     const randomId = Math.random().toString(36).slice(2, 9).toUpperCase();
-    console.log(this.getOrderedPizzas());
     if (!this.isOrderEmpty()) {
       const order: Order = {
         id: randomId,
