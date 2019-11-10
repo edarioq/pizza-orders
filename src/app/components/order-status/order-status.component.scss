@@ -196,6 +196,9 @@
     .status {
 
     }
+    &.item-id {
+        text-transform: uppercase;
+    }
     .accept {
         text-decoration: underline;
         color: $man-green;

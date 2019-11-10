@@ -5,6 +5,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Size } from '../../models/size';
 import { Topping } from '../../models/topping';
 import { Pizza } from '../../models/pizza';
+import { Order } from '../../models/order';
+
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-new-order',
@@ -120,7 +123,29 @@ export class NewOrderComponent implements OnInit {
   }
 
   public placeOrder(): void {
+    const randomId = Math.random().toString(36).slice(2, 9).toUpperCase();
+
     if (!this.isOrderEmpty()) {
+      const order: Order = {
+        id: randomId,
+        address: this.userForm.value.address,
+        time: moment().format(),
+        accepted: false,
+        transit: false,
+        completed: false,
+        canceled: false,
+      };
+
+      console.log(order);
+
+      this.orderService.saveOrder(order).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log(err);
+        }
+      );
       this.pizzas.splice(1, this.pizzas.length - 1);
       this.pizzas[0].sizes.map((size) => {
         size.selected = false;

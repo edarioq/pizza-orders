@@ -59,10 +59,18 @@
             </div>
             <div
                 class="table-body table-grid"
-                *ngFor="let order of orders">
-                <div class="table-col">{{ order.id }}</div>
+                *ngFor="let order of orders; let i = index">
+                <div class="table-col item-id">{{ order.id }} {{ i }}</div>
                 <div class="table-col">{{ order.address }}</div>
-                <div class="table-col">{{ order.time }}</div>
+                <div class="table-col">
+                    {{
+                        i > 8 ?
+                        (order._duration === 0 ? 'a few seconds ago ' :
+                        (order._duration === 1 ? order._duration + ' minute ago'
+                        : order._duration + ' minutes ago'))
+                        : order.time
+                    }}
+                </div>
                 <div class="table-col">
                     <span class="accept"
                         *ngIf="isNewOrder(order)"

@@ -32,6 +32,11 @@
     color: #fff;
     padding-left: 20px;
     text-decoration: none;
+    &:focus
+    &:hover,
+    &:active {
+        outline: 0;
+    }
     &.active {
         position: relative;
         &:after {
